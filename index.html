@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+	<form id="example">
+		<div>
+			<label>name</label>
+			<input type="text" name="name"/>
+		</div>
+		<div>
+			<label>age</label>
+			<input type="text" name="age"/>
+		</div>
+		<div>
+			<label>sex
+				<input type="radio" name="sex" value="0" checked/>
+				<input type="radio" name="sex" value="1"/>
+			</label>
+		</div>
+		<div>
+				<label>occupation</label>
+				<input id="o1"type="checkbox" name="occupation" value="driver" />
+				<label for="o1">driver</label>
+				<input id="o2" type="checkbox" name="occupation" value="student" />
+				<label for="o2">student</label>
+				<input id="o3" type="checkbox" name="occupation" value="teacher" />
+				<label for="o3">teacher</label>
+		</div>
+		<div>
+			<label>nationality</label>
+			<select name="nationality">
+					<option value="">none</option>
+					<option value="china">china</option>
+					<option value="usa">usa</option>
+				</select>
+		</div>
+	</form>
+	<button onclick="load()" >load</button>
+	<button onclick="reset()" >reset</button>
+</body>
+
+<script src="jquery-2.2.3.min.js"></script>
+<script src="form-data.js"></script>
+<script >
+	var jsonOrObj = {
+	  "name": "jack bon",
+	  "age": 18,
+	  "sex": 0,
+	  "occupation": [
+	    "driver",
+	    "teacher"
+	  ],
+	  "nationality":"china"
+	}
+	function load() {
+		$('#example').form('load',jsonOrObj)
+	}
+	function reset() {
+		$('#example').form('reset')
+	}
+</script>
+</body>
+</html>
