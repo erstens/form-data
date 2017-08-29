@@ -78,27 +78,6 @@ jQuery.prototype.form = function (k, p) {
             _$this.find("select").each(function () {
                 $(this).find('option').eq(0).prop('selected', true);
             });
-        },
-        /**
-         * require <bootstrap-validator>
-         * @returns {boolean}
-         */
-        validate: function () {
-            _$this.validator({
-                custom: {
-                    required: function ($el) { return !!$.trim($el.val()) }
-                },
-                errors: {
-                    required: '请填写此字段。.'
-                },
-                feedback: {
-                    success: 'fa fa-check',
-                    error: 'fa fa-times-circle-o'
-                }
-            });
-            _$this.validator('validate');
-            var errorClass = "has-error";
-            return !_$this.find('.' + errorClass).length > 0;
         }
 
     };
